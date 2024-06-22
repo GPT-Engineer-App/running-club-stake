@@ -1,11 +1,11 @@
-import { Box, Heading, Text, VStack, HStack, Stat, StatLabel, StatNumber, StatHelpText, StatGroup } from "@chakra-ui/react";
+import { Box, Heading, Text, VStack, HStack, Stat, StatLabel, StatNumber, StatHelpText, StatGroup, useBreakpointValue } from "@chakra-ui/react";
 
 const Dashboard = () => {
   return (
     <Box p={4}>
       <Heading mb={4}>Dashboard</Heading>
       <VStack spacing={4} align="stretch">
-        <StatGroup>
+        <StatGroup flexDirection={{ base: "column", md: "row" }} spacing={{ base: 4, md: 8 }}>
           <Stat>
             <StatLabel>Amount Staked</StatLabel>
             <StatNumber>$100</StatNumber>
@@ -29,16 +29,16 @@ const Dashboard = () => {
         </StatGroup>
         <Box>
           <Heading size="md">Top Level Metrics</Heading>
-          <HStack spacing={4} mt={2}>
-            <Box>
+          <HStack spacing={{ base: 4, md: 8 }} mt={2} flexDirection={{ base: "column", md: "row" }}>
+            <Box textAlign={{ base: "center", md: "left" }}>
               <Text>Distance</Text>
               <Text fontSize="2xl">0 miles</Text>
             </Box>
-            <Box>
+            <Box textAlign={{ base: "center", md: "left" }}>
               <Text>Time</Text>
               <Text fontSize="2xl">0 hrs</Text>
             </Box>
-            <Box>
+            <Box textAlign={{ base: "center", md: "left" }}>
               <Text>Average Pace</Text>
               <Text fontSize="2xl">0 min/mile</Text>
             </Box>
